@@ -10,7 +10,7 @@ ENV PYTHONPATH /app
 COPY ["requirements.txt", "gunicorn.conf", "./"]
 RUN pip install -r requirements.txt
 
-COPY rantier-parser/ /app/rantier-parser
+COPY rantier_parser /app/rantier_parser
 
 ENTRYPOINT ["gunicorn"]
-CMD ["-c", "gunicorn.conf", "rantier-parser.app:init_app"]
+CMD ["-c", "gunicorn.conf", "rantier_parser.app:init_app"]
