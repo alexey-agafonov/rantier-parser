@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 
 from aiohttp import web
-from rantier_parser.db import db
 import os
+from pymongo import MongoClient
 import pymongo
 import requests
 
@@ -12,6 +12,13 @@ async def index(request):
     api_token = os.environ.get('API_TOKEN')
     print(api_login)
     print(api_token)
+    db_user = os.environ.get('DB_USER')
+    print(db_user)
+    db_password = os.environ.get('DB_PASSWORD')
+    print(db_password)
+    db_url = f'mongodb+srv://{db_user}:{db_password}@rantier-55muu.mongodb.net/testretryWrites=true&w=majority'
+    db_name = 'rantier'
+    db = MongoClient(db_url)[db_name]
 
     # realty = get_realty(api_login, api_token)
 
