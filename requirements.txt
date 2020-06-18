@@ -1,0 +1,4 @@
+aiohttp
+gunicorn
+requests
+pymongo[tls,srv]==3.10.1
