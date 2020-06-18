@@ -64,3 +64,7 @@ async def init_app():
     except pymongo.errors.OperationFailure as e:
         print(e.code)
         print(e.details)
+
+    from aiohttp import web
+    app = web.Application()
+    return app
