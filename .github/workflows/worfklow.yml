@@ -20,4 +20,8 @@ jobs:
     - name: Release the app
       env:
         HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+        API_LOGIN: ${{ secrets.API_LOGIN }}
+        API_TOKEN: ${{ secrets.API_TOKEN }}
+        DB_USER: ${{ secrets.DB_USER }}
+        DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
       run: heroku container:release -a ${{ secrets.HEROKU_PARSER_NAME }} web
