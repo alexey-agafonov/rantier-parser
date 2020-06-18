@@ -10,6 +10,8 @@ import requests
 async def index(request):
     api_login = os.environ.get('API_LOGIN')
     api_token = os.environ.get('API_TOKEN')
+    print(api_login)
+    print(api_token)
 
     # realty = get_realty(api_login, api_token)
 
